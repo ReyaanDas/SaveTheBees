@@ -1,0 +1,17 @@
+const int pirPin = 2;        // HC-SR501 OUT pin
+const int buzzerPin = 8;     // Buzzer + pin
+const int frequency = 4000; // 10,000 Hz (10 kHz)
+
+void setup() {
+  pinMode(pirPin, INPUT);
+  pinMode(buzzerPin, OUTPUT);
+}
+
+void loop() {
+  if (digitalRead(pirPin) == HIGH) {
+    tone(buzzerPin, frequency); // Play 10,000 Hz tone
+  } else {
+    noTone(buzzerPin);          // Stop tone when motion ends
+  }
+}
+Use this code for Arduino IDE
